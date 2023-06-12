@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	<context:component-scan base-package="com.xp.test1.service"/>
+
+	<bean id="userDao" class="com.xp.test1.dao.UserDao" autowire="byType">
+
+	</bean>
+	<bean id="xxxxx" class="com.xp.test1.dao.XxDao">
+
+	</bean>
+	<bean id="xx1" class="com.xp.test1.dao.XXX1">
+
+	</bean>
+
+
+	<!--<bean id="a" class="com.xp.test1.test.A" >
+		&lt;!&ndash; 由程序员手动指定的依赖关系 称为手动装配&ndash;&gt;
+		<property name="b">
+			<ref bean="b" />
+		</property>
+	</bean>-->
+	<!--<bean id="a" class="com.xp.test1.test.A" >
+		<property name="xxx">
+			<ref bean="b" />
+		</property>
+	</bean>-->
+	<!--<bean id="a" class="com.xp.test1.test.A" scope="prototype">
+
+	</bean>-->
+
+
+	<!--<bean id="xpService"  class="com.xp.test1.test.XpService">
+	</bean>
+	<bean id="b222"  class="com.xp.test1.test.B2">
+	</bean>-->
+
+	<bean abstract="true" id="bd">
+		<property name="age" value="25"/>
+	</bean>
+
+	<bean id="bb" parent="bd" class="com.xp.test1.service.XpService" autowire="byType">
+		<property name="age" value="22"/>
+	</bean>
+</beans>
